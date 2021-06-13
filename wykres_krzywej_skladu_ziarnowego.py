@@ -579,148 +579,19 @@ class WykresKrzywejSkladuZiarnowego:
         pass
 
 
-    def test_draw(self, tab_1, tab_2, char_80, char_50, thick_15, tab_1_2, tab_2_2, char_80_2, char_50_2, thick_15_2,
-                  tab_1_3, tab_2_3, char_80_3, char_50_3, thick_15_3):
-
-        fig = plt.figure(figsize=(7, 6))
-        axes = fig.add_axes([0.1, 0.1, 0.8, 0.8])
-
-
-        # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-        Points = []
-
-        Points.append(char_80)
-        Points.append(char_50)
-        Points.append(thick_15)
-        for i in range(len(tab_1)):
-            Points.append([tab_1[i], tab_2[i]])
-
-        n = len(Points)  # amount elements in Points
-
-        Points.sort(key=lambda x: (x[1], x[0]))
-
-        """ Printuje linie na wykresie poczatek-koniec """
-        axes.plot([Points[n - 2][0], Points[n - 1][0]], [Points[n - 2][1], Points[n - 1][1]], color='b')
-        axes.plot([Points[0][0], Points[1][0]], [Points[0][1], Points[1][1]], color='b')
-
-        # Define a set of points for curve to go through
-        # Points = [[tab_1[0], tab_2[0]], [tab_1[1], tab_2[1]], [tab_1[2], tab_2[2]],[dol_d[count_2], 50]
-
-        # Calculate the Catmull-Rom splines through the points
-        c = script.CatmullRomChain(Points)
-        # Convert the Catmull-Rom curve points into x and y arrays and plot
-        x, y = zip(*c)
-        plt.plot(x, y, color='b')
-
-        """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50[0], 50, 'o', color='k')
-        axes.plot(char_80[0], 80, 'o', color='k')
-        axes.text(char_80[0] + 0.5, 80, f" {round(char_80[0], 2)} w 80%")
-        axes.text(char_50[0] + 0.5, 50, f" {round(char_50[0], 2)} w 50%")
-
-        # punkty !!!
-        axes.plot(tab_1, tab_2, 'o', color='b')  # draw points
-
-
-
-
-        # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-        Points_2 = []
-
-        Points_2.append(char_80_2)
-        Points_2.append(char_50_2)
-        Points_2.append(thick_15_2)
-        for i in range(len(tab_1_2)):
-            Points_2.append([tab_1_2[i], tab_2_2[i]])
-
-        n = len(Points_2)  # amount elements in Points
-
-        Points_2.sort(key=lambda x: (x[1], x[0]))
-
-        """ Printuje linie na wykresie poczatek-koniec """
-        axes.plot([Points_2[n - 2][0], Points_2[n - 1][0]], [Points_2[n - 2][1], Points_2[n - 1][1]], color='b')
-        axes.plot([Points_2[0][0], Points_2[1][0]], [Points_2[0][1], Points_2[1][1]], color='b')
-
-        # Define a set of points for curve to go through
-        # Points = [[tab_1[0], tab_2[0]], [tab_1[1], tab_2[1]], [tab_1[2], tab_2[2]],[dol_d[count_2], 50]
-
-        # Calculate the Catmull-Rom splines through the points
-        c_2 = script.CatmullRomChain(Points_2)
-        # Convert the Catmull-Rom curve points into x and y arrays and plot
-        x_2, y_2 = zip(*c_2)
-        plt.plot(x_2, y_2, color='b')
-
-        """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50_2[0], 50, 'o', color='k')
-        axes.plot(char_80_2[0], 80, 'o', color='k')
-        axes.text(char_80_2[0] + 0.5, 80, f" {round(char_80_2[0], 2)} w 80%")
-        axes.text(char_50_2[0] + 0.5, 50, f" {round(char_50_2[0], 2)} w 50%")
-
-        # punkty !!!
-        axes.plot(tab_1_2, tab_2_2, 'o', color='b')  # draw points
-
-        # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-        Points_3 = []
-
-        Points_3.append(char_80_3)
-        Points_3.append(char_50_3)
-        Points_3.append(thick_15_3)
-        for i in range(len(tab_1_3)):
-            Points_3.append([tab_1_3[i], tab_2_3[i]])
-
-        n = len(Points_3)  # amount elements in Points
-
-        Points_3.sort(key=lambda x: (x[1], x[0]))
-
-        """ Printuje linie na wykresie poczatek-koniec """
-        axes.plot([Points_3[n - 2][0], Points_3[n - 1][0]], [Points_3[n - 2][1], Points_3[n - 1][1]], color='b')
-        axes.plot([Points_3[0][0], Points_3[1][0]], [Points_3[0][1], Points_3[1][1]], color='b')
-
-        # Define a set of points for curve to go through
-        # Points = [[tab_1[0], tab_2[0]], [tab_1[1], tab_2[1]], [tab_1[2], tab_2[2]],[dol_d[count_2], 50]
-
-        # Calculate the Catmull-Rom splines through the points
-        c_3 = script.CatmullRomChain(Points_3)
-        # Convert the Catmull-Rom curve points into x and y arrays and plot
-        x_3, y_3 = zip(*c_3)
-        plt.plot(x_3, y_3, color='b')
-
-        """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50_3[0], 50, 'o', color='k')
-        axes.plot(char_80_3[0], 80, 'o', color='k')
-        axes.text(char_80_3[0] + 0.5, 80, f" {round(char_80_3[0], 2)} w 80%")
-        axes.text(char_50_3[0] + 0.5, 50, f" {round(char_50_3[0], 2)} w 50%")
-
-        # punkty !!!
-        axes.plot(tab_1_3, tab_2_3, 'o', color='b')  # draw points
-
-
-
-        """ Plotting text """
-
-        blue_line = mlines.Line2D([], [], color='blue', marker='o', label=f'wychód {self.numer_wychodu}')
-        plt.legend(handles=[blue_line])
-        plt.title(f'wychód {self.numer_wychodu}')
-        plt.xlabel('górna granica przedzialu')
-        plt.ylabel('Σ masa %')
-        if self.is_save:
-            plt.savefig(f"wychod{self.numer_wychodu}__{time.strftime('%m_%d_%Y-%H_%M_%S')}__{self.time_step}.png")
-
-        if self.is_draw:
-            plt.show()
-
-        pass
-
 def main(args):
-    """main function"""
+    """
 
+    parametry wejsciowe:
+    interval_table  = [poczatkowy krok, koncowy krok czasowy, interwal],
+    list_section    = [20, 30, 40, 50, 60, 80] - od 5 do 10 elementow,
+    filepath        = sciezka
+
+    """
+
+    interval_table = [100, 200, 50]
+    list_sections = [20, 30, 50, 60, 80]
     filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
-    # ponizej 4 kroku czasowego powstaje artefakt !!!
-
-
-
 
 
 
@@ -730,10 +601,10 @@ def main(args):
     # Utility to average lists
     avg = lambda items: float(sum(items)) / len(items)
 
-    for i in range(150, 260, 60):
+    for i in range(interval_table[0], interval_table[1], interval_table[2]):
         test_object = WykresKrzywejSkladuZiarnowego(enter_time_step=i, rock_number=0, is_save=False,
                                              is_draw=True, numer_wychodu=1, filepath=filepath,
-                                             list_sections=[20, 30, 40, 50, 60, 80]) #, 120, 200, 300, 1000])
+                                             list_sections=list_sections) #, 120, 200, 300, 1000])
 
 
         #test_object.draw_graph()
