@@ -1,15 +1,18 @@
-import matplotlib.pyplot as plt
+from edempy import Deck
+import edempy
 
 
 
-fig = plt.figure(figsize=(7, 6))
-axes = fig.add_axes([0.1, 0.1, 0.8, 0.8])
-
-plt.plot([1,1], [2, 2], [3,3], [4,4], [5,5], [6,6], [7,7], color='green', marker='o')
-
-#plt.show()
 
 
-a  =[1,2,3,4,5]
-print(len(a))
-print(a[len(a)-1])
+
+filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
+
+deck = Deck(filepath)
+
+id = 95346
+
+print(len(deck.timestep[240].particle[3].getMass()))
+print(deck.timestep[240].particle[3].getMass())
+
+#(self.deck.timestep[self.time_step].particle[3].getMass()))
