@@ -701,6 +701,7 @@ def main(args):
     avg = lambda items: float(sum(items)) / len(items)
 
     for i in range(interval_table[0], interval_table[1], interval_table[2]):
+        print("Krok czasowy: ", i)
         test_object = WykresKrzywejSkladuZiarnowego(enter_time_step=i, rock_number=rock_number, is_save=False,
                                                     is_draw=True, numer_wychodu=1, filepath=filepath,
                                                     list_sections=list_sections)

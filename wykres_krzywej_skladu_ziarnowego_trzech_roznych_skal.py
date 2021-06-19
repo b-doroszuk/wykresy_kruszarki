@@ -876,6 +876,7 @@ def main():
     avg = lambda items: float(sum(items)) / len(items)
 
     for i in range(interval_table[0], interval_table[1], interval_table[2]):
+        print("Krok czasowy lupek: ", i)
 
         test_object = WykresKrzywejSkladuZiarnowego(enter_time_step=i, rock_number=1, is_save=False,
                                                     is_draw=True, numer_wychodu=1, filepath=filepath,
@@ -910,6 +911,7 @@ def main():
         export_table[4].append(i)
 
     for i in range(interval_table[0], interval_table[1], interval_table[2]):
+        print("Krok czasowy piaskowiec: ", i)
         test_object = WykresKrzywejSkladuZiarnowego(enter_time_step=i, rock_number=2, is_save=False,
                                                     is_draw=True, numer_wychodu=1, filepath=filepath,
                                                     list_sections=list_sections)
@@ -943,6 +945,7 @@ def main():
         export_2_table[4].append(i)
 
     for i in range(interval_table[0], interval_table[1], interval_table[2]):
+        print("Krok czasowy dolomit: ", i)
         test_object = WykresKrzywejSkladuZiarnowego(enter_time_step=i, rock_number=3, is_save=False,
                                                     is_draw=True, numer_wychodu=1, filepath=filepath,
                                                     list_sections=list_sections)
