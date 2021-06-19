@@ -586,8 +586,8 @@ class WykresKrzywejSkladuZiarnowego:
         Points.sort(key=lambda x: (x[1], x[0]))
 
         """ Printuje linie na wykresie poczatek-koniec """
-        axes.plot([Points[n - 2][0], Points[n - 1][0]], [Points[n - 2][1], Points[n - 1][1]], color='b')
-        axes.plot([Points[0][0], Points[1][0]], [Points[0][1], Points[1][1]], color='b')
+        axes.plot([Points[n - 2][0], Points[n - 1][0]], [Points[n - 2][1], Points[n - 1][1]], color='r')
+        axes.plot([Points[0][0], Points[1][0]], [Points[0][1], Points[1][1]], color='r')
 
         # Define a set of points for curve to go through
         # Points = [[tab_1[0], tab_2[0]], [tab_1[1], tab_2[1]], [tab_1[2], tab_2[2]],[dol_d[count_2], 50]
@@ -599,10 +599,10 @@ class WykresKrzywejSkladuZiarnowego:
         plt.plot(x, y, color='b')
 
         """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50[0], 50, 'o', color='k')
-        axes.plot(char_80[0], 80, 'o', color='k')
-        axes.text(char_80[0] + 0.5, 80, f" {round(char_80[0], 2)} w 80%")
-        axes.text(char_50[0] + 0.5, 50, f" {round(char_50[0], 2)} w 50%")
+        axes.plot(char_50[0], 50, 'o', color='r')
+        axes.plot(char_80[0], 80, 'o', color='r')
+        axes.text(char_80[0] + 0.5, 80, f"d80= {round(char_80[0], 2)}")
+        axes.text(char_50[0] + 0.5, 50, f"d50= {round(char_50[0], 2)}")
 
         # punkty !!!
         axes.plot(tab_1, tab_2, 'o', color='b')  # draw points
@@ -611,7 +611,7 @@ class WykresKrzywejSkladuZiarnowego:
 
         blue_line = mlines.Line2D([], [], color='blue', marker='o', label=f'wychód {self.numer_wychodu}')
         plt.legend(handles=[blue_line])
-        plt.title(f'wychód {self.numer_wychodu}')
+        plt.title(f'wychód 1 {self.numer_wychodu}')
         plt.xlabel('górna granica przedzialu')
         plt.ylabel('Σ masa %')
 
@@ -717,8 +717,8 @@ class WykresKrzywejSkladuZiarnowego:
         Points.sort(key=lambda x: (x[1], x[0]))
 
         """ Printuje linie na wykresie poczatek-koniec """
-        axes.plot([Points[n - 2][0], Points[n - 1][0]], [Points[n - 2][1], Points[n - 1][1]], color='b')
-        axes.plot([Points[0][0], Points[1][0]], [Points[0][1], Points[1][1]], color='b')
+        axes.plot([Points[n - 2][0], Points[n - 1][0]], [Points[n - 2][1], Points[n - 1][1]], color='r')
+        axes.plot([Points[0][0], Points[1][0]], [Points[0][1], Points[1][1]], color='r')
 
         # Define a set of points for curve to go through
         # Points = [[tab_1[0], tab_2[0]], [tab_1[1], tab_2[1]], [tab_1[2], tab_2[2]],[dol_d[count_2], 50]
@@ -727,16 +727,16 @@ class WykresKrzywejSkladuZiarnowego:
         c = script.CatmullRomChain(Points)
         # Convert the Catmull-Rom curve points into x and y arrays and plot
         x, y = zip(*c)
-        plt.plot(x, y, color='b')
+        plt.plot(x, y, color='r')
 
         """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50[0], 50, 'o', color='k')
-        axes.plot(char_80[0], 80, 'o', color='k')
-        axes.text(char_80[0] + 0.5, 80, f" {round(char_80[0], 2)} w 80%")
-        axes.text(char_50[0] + 0.5, 50, f" {round(char_50[0], 2)} w 50%")
+        axes.plot(char_50[0], 50, 'o', color='r')
+        axes.plot(char_80[0], 80, 'o', color='r')
+        axes.text(char_80[0], 83, f"d80= {round(char_80[0], 2)}", color='r')
+        axes.text(char_50[0], 53, f"d50= {round(char_50[0], 2)}", color='r')
 
         # punkty !!!
-        axes.plot(tab_1, tab_2, 'o', color='b')  # draw points
+        axes.plot(tab_1, tab_2, 'o', color='r')  # draw points
 
         # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -766,10 +766,10 @@ class WykresKrzywejSkladuZiarnowego:
         plt.plot(x_2, y_2, color='b')
 
         """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50_2[0], 50, 'o', color='k')
-        axes.plot(char_80_2[0], 80, 'o', color='k')
-        axes.text(char_80_2[0] + 0.5, 80, f" {round(char_80_2[0], 2)} w 80%")
-        axes.text(char_50_2[0] + 0.5, 50, f" {round(char_50_2[0], 2)} w 50%")
+        axes.plot(char_50_2[0], 50, 'o', color='b')
+        axes.plot(char_80_2[0], 80, 'o', color='b')
+        axes.text(char_80_2[0], 80, f"d80= {round(char_80_2[0], 2)}", color='b')
+        axes.text(char_50_2[0], 50, f"d50= {round(char_50_2[0], 2)}", color='b')
 
         # punkty !!!
         axes.plot(tab_1_2, tab_2_2, 'o', color='b')  # draw points
@@ -789,8 +789,8 @@ class WykresKrzywejSkladuZiarnowego:
         Points_3.sort(key=lambda x: (x[1], x[0]))
 
         """ Printuje linie na wykresie poczatek-koniec """
-        axes.plot([Points_3[n - 2][0], Points_3[n - 1][0]], [Points_3[n - 2][1], Points_3[n - 1][1]], color='b')
-        axes.plot([Points_3[0][0], Points_3[1][0]], [Points_3[0][1], Points_3[1][1]], color='b')
+        axes.plot([Points_3[n - 2][0], Points_3[n - 1][0]], [Points_3[n - 2][1], Points_3[n - 1][1]], color='y')
+        axes.plot([Points_3[0][0], Points_3[1][0]], [Points_3[0][1], Points_3[1][1]], color='y')
 
         # Define a set of points for curve to go through
         # Points = [[tab_1[0], tab_2[0]], [tab_1[1], tab_2[1]], [tab_1[2], tab_2[2]],[dol_d[count_2], 50]
@@ -799,21 +799,21 @@ class WykresKrzywejSkladuZiarnowego:
         c_3 = script.CatmullRomChain(Points_3)
         # Convert the Catmull-Rom curve points into x and y arrays and plot
         x_3, y_3 = zip(*c_3)
-        plt.plot(x_3, y_3, color='b')
+        plt.plot(x_3, y_3, color='y')
 
         """Plotting points and additionals"""  # 50 i 80 !!!
-        axes.plot(char_50_3[0], 50, 'o', color='k')
-        axes.plot(char_80_3[0], 80, 'o', color='k')
-        axes.text(char_80_3[0] + 0.5, 80, f" {round(char_80_3[0], 2)} w 80%")
-        axes.text(char_50_3[0] + 0.5, 50, f" {round(char_50_3[0], 2)} w 50%")
+        axes.plot(char_50_3[0], 50, 'o', color='y')
+        axes.plot(char_80_3[0], 80, 'o', color='y')
+        axes.text(char_80_3[0], 77, f"d80= {round(char_80_3[0], 2)}", color='y')
+        axes.text(char_50_3[0], 47, f"d50=  {round(char_50_3[0], 2)}", color='y')
 
         # punkty !!!
-        axes.plot(tab_1_3, tab_2_3, 'o', color='b')  # draw points
+        axes.plot(tab_1_3, tab_2_3, 'o', color='y')  # draw points
 
         """ Plotting text """
         blue_line = mlines.Line2D([], [], color='blue', marker='o', label=f'wychód {self.numer_wychodu}')
-        plt.legend(handles=[blue_line])
-        plt.title(f'wychód {self.numer_wychodu}')
+        #plt.legend(handles=[blue_line])
+        #plt.title(f'wychód {self.numer_wychodu}')
         plt.xlabel('górna granica przedzialu')
         plt.ylabel('Σ masa %')
         if self.is_save:
@@ -835,9 +835,9 @@ def main():
     is_export       = czy exportowac do txt (True / False)
     """
 
-    interval_table = [200, 260, 10]
+    interval_table = [1900, 2000, 50]
     list_sections = [2, 4, 5, 8, 10, 15, 20, 25, 30]
-    filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
+    filepath = "E:\\Etap2_Polkowice\\simulation_0\\simulation_0.dem"
     is_export = True
 
     # All below treat as black-box

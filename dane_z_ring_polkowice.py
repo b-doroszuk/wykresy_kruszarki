@@ -3,7 +3,7 @@ from edempy import Deck
 import numpy as np
 from edempy import BoxBin, CylinderBin
 
-filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
+filepath = "E:\\Etap2_Polkowice\\simulation_0\\simulation_0.dem"
 
 deck = Deck(filepath)
 

@@ -742,7 +742,7 @@ def main(args):
     """
     interval_table = [140, 260, 20]
     list_sections = [1, 2, 3, 10, 15, 30, 80, 100]
-    filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
+    filepath = "E:\\Etap2_Polkowice\\simulation_0\\simulation_0.dem"
     rock_number = 3
     is_export = False
 

@@ -582,8 +582,8 @@ class WykresKrzywejSkladuZiarnowego:
         """Plotting points and additionals"""  # 50 i 80 !!!
         axes.plot(char_50[0], 50, 'o', color='k')
         axes.plot(char_80[0], 80, 'o', color='k')
-        axes.text(char_80[0] + 0.5, 80, f" {round(char_80[0], 2)} w 80%")
-        axes.text(char_50[0] + 0.5, 50, f" {round(char_50[0], 2)} w 50%")
+        axes.text(char_80[0] + 1, 81, f"d80 =  {round(char_80[0], 2)}")
+        axes.text(char_50[0] + 1, 51, f"d50 =  {round(char_50[0], 2)}")
 
         # punkty !!!
         axes.plot(tab_1, tab_2, 'o', color='b')  # draw points
@@ -595,7 +595,8 @@ class WykresKrzywejSkladuZiarnowego:
         plt.title(f'wychód {self.numer_wychodu}')
         plt.xlabel('górna granica przedzialu')
         plt.ylabel('Σ masa %')
-
+        plt.xlim([0, 100])
+        plt.ylim([0, 80])
         if self.is_save:
             plt.savefig(f"wychod{self.numer_wychodu}__{time.strftime('%m_%d_%Y-%H_%M_%S')}__{self.time_step}.png")
 
@@ -686,9 +687,9 @@ def main(args):
     is_export       = czy exportowac do txt (True / False)
 
     """
-    interval_table = [140, 170, 30]
+    interval_table = [1950, 2000, 50]
     list_sections = [2, 5, 8, 10, 12, 30, 80]
-    filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
+    filepath = "E:\\Etap2_Polkowice\\simulation_0\\simulation_0.dem"
     rock_number = 0
     is_export = False
 

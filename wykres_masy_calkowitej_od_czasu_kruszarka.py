@@ -51,14 +51,17 @@ def get_data(time_step_list: list, deck: object):
 
     return timestep_array, mass_array
 
-def draw_graph(x, y, is_save=False, is_draw=True):
+def draw_graph(x, y, is_save=True, is_draw=False):
     fig = plt.figure(figsize=(7, 6))
     axes = fig.add_axes([0.1, 0.1, 0.8, 0.8])
 
     axes.plot(x, y)
-    plt.title(f'wydajnosc od czasu')
-    plt.xlabel('czas')
-    plt.ylabel('Σ masa')
+    #plt.title(f'wydajnosc od czasu')
+    plt.xlabel('Czas [s]')
+    plt.ylabel('Masa w układzie [kg]')
+
+    plt.xlim([0, 20])
+    plt.ylim([0, 250])
 
     if is_save:
         plt.savefig(f"wydajnosc_od_czasu__{time.strftime('%m_%d_%Y-%H_%M_%S')}.png")
@@ -76,8 +79,8 @@ def main():
     is_export       = czy exportowac do txt (True / False)
 
     """
-    interval_table = [1, 260, 5]
-    filepath = "C:\\Users\\Jakub\\PycharmProjects\\test2\\testownik11_prof_Robert_Krol\\projekt_2\\POLKOWICE_etap_2\\simulation_0\\simulation_0.dem"
+    interval_table = [1, 2000, 10]
+    filepath = "E:\\Etap2_Polkowice\\simulation_0\\simulation_0.dem"
     is_export = True
 
     # All bellow treat as black-box
